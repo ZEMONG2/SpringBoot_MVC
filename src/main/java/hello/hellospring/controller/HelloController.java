@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
+    /*
+    컨트롤러에서 리턴 값으로 문자를 반환하면 viewResolver가 화면을 찾아서 처리한다.
+    스프링 부트 템플릿 엔진 기본 viewName 매핑
+    resource:templates/ + {ViewName} + .html
+    */
+
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("data", "hello!!");
@@ -59,4 +65,11 @@ public class HelloController {
         }
     }
 
+    /*
+    일반적인 웹 애플리케이션 계층 구조
+    컨트롤러 : 웹 MVC의 컨트롤러 역할
+    서비스 : 핵심 비지니스 로직 구현
+    리포지토리 : 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리
+    도메인 : 비지니스 도메인 객체, 예) 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리
+     */
 }
