@@ -74,6 +74,8 @@ public class MemberService {
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
+        //ifPresent : 값이있다면 실행 없다면 패스 / 예외발생
+        //isPresent : boolean타입 / true, false 체크
     }
 
     /**
