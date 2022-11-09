@@ -16,8 +16,7 @@ public class HelloController {
 
     /*
     스프링 컨테이너란
-    스프링 컨테이너는 스프링 빈의 생명 주기를 관리하며, 생성된 스프링 빈들에게 추가적인 기능을 제공하는 역할을 한다.
-    IOC와 DI의 원리가 스프링 컨테이너에 적용된다
+    스프링 컨테이너는 스프링 빈의 생명 주기를 관리하며, 생성된 스프링 빈들에게 추가적인 기능을 제공하는 역할을 한다
     일반적으로 new연산자, 인터페이스 호출, 팩토리 호출 방식으로 객체를 생성하고 소멸하지만,
     스프링 컨테이너를 사용하면 해당 역할을 대신해 준다. 즉, 제어 흐름을 외부에서 관리하게 된다.
     또한, 객체들 간의 의존 관계를 스프링 컨테이너가 런타임 과정에서 알아서 만들어 준다.
@@ -31,7 +30,7 @@ public class HelloController {
     @Configuration : 해당 클래스를 스프링 설정 정보라고 인식한다.
     또한 코드생성 라이브러리[CGLIB(Code Generator Library)]를 통해 조작된 클래스가 빈으로 등록되게 하며, 이로인해 빈들을 싱글톤으로 관리할 수 있다.
     @Component : 그 외에 자동으로 스캔해서 등록하고 싶은 것들을 위해 사용
-    (+ 추가 @Component의 구체화된 형태로 @Repository, @Service, @Controller, @Configuration)
+    (+ 추가 @Component의 구체화된 형태로 @Repository, @Service, @Controller 등)
 
     각 레이어의 부가 설명
     Presentation Layer : 클라이언트와 최초로 만나는 곳으로 데이터 입출력이 발생하는 곳이다.

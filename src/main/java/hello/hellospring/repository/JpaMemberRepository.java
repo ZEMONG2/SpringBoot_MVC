@@ -29,6 +29,12 @@ public class JpaMemberRepository implements MemberRepository{ // implements : �
         return Optional.ofNullable(member);
     }
 
+    /*
+    Optional<>
+    NPE(NullPointerException)발생으르 막기 위해 null 여부를 검사해야하는데,
+    Optional<T>는 null이 올 수 있는 값을 감싸는 Wrapper 클래스로, 참조하더라도 NPE가 발생하지 않도록 도와준다.
+     */
+
     @Override
     public Optional<Member> findByName(String name) {
         List<Member> result = em.createQuery("select m from Member m where m.name = :name", Member.class).setParameter("name",name).getResultList();

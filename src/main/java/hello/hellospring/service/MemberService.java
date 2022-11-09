@@ -68,8 +68,8 @@ public class MemberService {
 
     private void validateDuplicateMember(Member member) {
         // 같은 이름의 중복 회원은 불가능
-        // cmd + opt + v  :  리턴 알아서 잡아줌
-        // ctrl + t : method 추출
+        // cmd + opt + v : 리턴 알아서 잡아줌
+        // cmd + opt + m : method 추출
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");

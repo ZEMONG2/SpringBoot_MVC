@@ -8,7 +8,9 @@ import java.util.*;
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
+    // 실무에서는 ConcurrentHashmap 을 써야한다 공유되는 자원이기에 동시성 문제가 생길 수 있다.
     private static long sequence = 0L;
+    // AtomicLong을 써줘야한다 실무에서는 동시성 문제
 
     @Override
     public Member save(Member member) {
