@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-public class JpaMemberRepository implements MemberRepository{
+public class JpaMemberRepository implements MemberRepository{ // implements : 인터페이스 상속
 
     private final EntityManager em;
     /* Entity 관리를 수행하는 클래스

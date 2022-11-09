@@ -51,7 +51,7 @@ public class HelloController {
         return "hello";
     }
 
-    @GetMapping("hello-mvc")  // 쿼리스트링 가져오기
+    @GetMapping("hello-mvc")  // 쿼리스트링 가져오기 - required = true 가 디폴트라서 선언한 name이 없을경우 페이지를 불러올 수 없다.
     public String helloMvc(@RequestParam("name") String name, Model model) {
         model.addAttribute("name", name);
         return "hello-template";
@@ -77,7 +77,7 @@ public class HelloController {
     * */
 
     @GetMapping("hello-api")
-    @ResponseBody
+    @ResponseBody //api
     public Hello helloApi(@RequestParam("name") String name){
         Hello hello = new Hello();
         hello.setName(name);
