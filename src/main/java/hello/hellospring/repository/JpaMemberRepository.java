@@ -13,6 +13,8 @@ public class JpaMemberRepository implements MemberRepository{ // implements : �
     엔티티 매니저 내부에 **영속성 컨텍스트(Persistence Context)**라는 걸 두어서 엔티티들을 관리한다.
     영속성 컨텍스트는 엔티티를 영구히 저장하는 환경이다.
     */
+
+    // 스프링 부트가 jpa 라이브러리가 빌드되어있으면 자동으로 EntityManager를 생성해줌.
     public JpaMemberRepository(EntityManager em) {
         this.em = em;
     }
@@ -43,6 +45,11 @@ public class JpaMemberRepository implements MemberRepository{ // implements : �
 
     @Override
     public List<Member> findAll() {
+        // jpql 쿼리 언어
+        // 테이블 대상으로 쿼리를 날리지않고 객체를 대상으로 쿼리를 날림.
+        // 그러면 쿼리로 이게 sql로 변형이 된다!
+        // member를 대상으로 쿼리를 날리는 것이다.
+        // 객체 자체를 select 한다.
         List<Member> result = em.createQuery("select m from Member m", Member.class).getResultList();
         return result;
     }
