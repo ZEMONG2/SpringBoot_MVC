@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-public class JpaMemberRepository implements MemberRepository{ // implements : 인터페이스 상속
+public class JpaMemberRepository implements MemberRepository{ // implements : 인터페이스 상속 - Override(재정의) 해줘야한다. 다중 상속 가능.
 
     private final EntityManager em;
     /* Entity 관리를 수행하는 클래스

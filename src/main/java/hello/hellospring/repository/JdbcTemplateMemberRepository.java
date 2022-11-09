@@ -57,6 +57,9 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
         findAny() : stream에서 가장 먼저 탐색되는 요소를 리턴
         findFirst() : stream에서 조건에 일치하는 요소들 중 stream에서 순서가 가장 앞에 있는 요소 리턴
         -> stream을 직렬 처리할 땐 차이점이 없지만 병렬 처리할 땐 차이가 있다.
+        -> 리턴값은 Optional 이므로 ifPresent()를 이용해 출력하기도 한다.
+        -> 보통 filter()와 함께 사용한다.
+        - 이 외에도 여러가지가 많이 존재한다. : https://dinfree.com/blog/2019/04/01/javafp-3.html 참고
          */
     }
 
